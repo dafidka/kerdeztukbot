@@ -15,9 +15,17 @@ function random(min, max) {
 
 
 client.on('message', gotMessage);
+
+client.on('ready', () => {
+    console.log('Bot is online!')
+    client.user.setActivity('kerdeztem xd 🤡', {type: "LISTENING"}).catch(console.error);
+})
+
 function gotMessage(msg) {
     //console.log(msg.content);
     //console.log(msg.author.id);
+
+    if (msg.author.bot) return;
 
     if (msg.content.includes !== '$' && b_valasz && msg.author.id != myID) {
 
@@ -31,7 +39,7 @@ function gotMessage(msg) {
         }
     }
 
-    if (msg.content.includes('$')) {
+    if (msg.content.startsWith('$')) {
         //msg.channel.send('kerdeztuk');
         
         if (msg.content.includes('valasz') || msg.content == '$v') {
