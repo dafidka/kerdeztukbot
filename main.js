@@ -2,7 +2,6 @@ const Discord = require("discord.js");
 const fs = require('fs');
 
 const client = new Discord.Client();
-const myID = 828673255173783612;
 
 var b_valasz = false;
 var token = fs.readFileSync('token', 'utf8');
@@ -30,11 +29,11 @@ function gotMessage(msg) {
     if (msg.content.includes !== '$' && b_valasz && msg.author.id != myID) {
 
         switch (random(0,4)) {
-            case 1: msg.channel.send('kerdeztuk 🤡');
+            case 1: msg.channel.send('uzenet 1');
                 break;
-            case 2: msg.channel.send('fogd mar be 🤐');
+            case 2: msg.channel.send('uzenet 2');
                 break;
-            case 3: msg.channel.send('kurva anyad 🔫');
+            case 3: msg.channel.send('uzenet 3');
                 break;
         }
     }
